@@ -36,18 +36,38 @@ function Chat({socket, userName, room}) {
 	}, [socket]);
 
 	return (
-		<div>
-			<div className="chat-header">
+		<div class="grid h-auto place-items-center border-2 border-black">
+			<div class="bg-black w-full text-white text-center">
 
-				<p>Live Chat</p>
+				<p >Live Chat</p>
 
 			</div>
 			
-			<div className="chat-body">
+			<div class="overflow-y-auto w-full h-96 text-white border-2 border-blue-700 grid grid-cols-2">
 
 				{messageList.map((messageContent) => {
 
-					return <h1>{messageContent.message}</h1>
+					return (
+						<>
+							<div class="block">
+
+								<div class="w-full grid-1">
+
+										<h1 class={`${userName === messageContent.author ? "bg-green-700 text-left" : "bg-blue-700 text-rigth"} rounded flex flex-wrap h-auto w-1/2`}>{messageContent.message}</h1>	
+								
+						
+								</div>
+
+								<div>
+
+									<p class="text-black">{messageContent.author} {messageContent.time}</p>
+
+								</div>
+
+							</div>
+						<br/>
+						</>
+						)
 
 				})}
 

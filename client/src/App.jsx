@@ -25,11 +25,11 @@ function App() {
   };
 
   return (
-    <div className="App">
+    <div class="grid h-screen place-items-center">
       {!showChat ? (
-        <div>
-          <h3 class="border-2">Join A Chat</h3>
-          <input type="text" placeholer="Alison..." onChange={
+        <div class="w-96 text-center bg-white border-2 border-black grid h-72 place-items-center">
+          <h3 class="text-3xl">Join a Chat</h3>
+          <input class="border-2 border-black" type="text" placeholer="Alison..." onChange={
 
             (event) => {
 
@@ -38,7 +38,7 @@ function App() {
             }
           
           }/>
-          <input type="text" placeholer="Room ID..." onChange={
+          <input class="border-2 border-black" type="text" placeholer="Room ID..." onChange={
 
             (event) => {
 
@@ -47,7 +47,8 @@ function App() {
             }
           
           }/>
-          <button onClick={joinRoom}>Join A Room</button>
+          <br/>
+          <button class="w-44 h-16 bg-black rounded text-white" onClick={joinRoom}>Join A Room</button>
         </div>
       ) 
       : (
